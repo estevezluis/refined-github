@@ -54,6 +54,8 @@ function updateStickiness(): void {
 
 function init(signal: AbortSignal): void {
 	document.documentElement.classList.add('rgh-sticky-sidebar-enabled');
+	// solves issue #3732
+	document.querySelector('footer > div')?.classList.remove('position-relative')
 
 	// The element is recreated when the page is updated
 	// `trackSidebar` also triggers the first update via `sidebarObserver.observe()`
